@@ -20,14 +20,8 @@ async def advice(_, message):
         c = a["date"]
         url = a["imageUrl"]
         b = a["explanation"]
-        caption = f"Tᴏᴅᴀʏ's [{c}] ᴀsᴛʀᴏɴᴏᴍɪᴄᴀʟ ᴇᴠᴇɴᴛ:\n\n{b}"
+        caption = f"Today's [{c}] astronomical event:\n\n{b}"
         await message.reply_photo(url, caption=caption)
     else:
-        await message.reply_photo("ᴛʀʏ ᴀғᴛᴇʀ sᴏᴍᴇ ᴛɪᴍᴇ")
+        await message.reply_photo("Try again later.")
         await app.send_message(LOG, "/astronomical not working")
-
-
-__MODULE__ = "Aᴅᴠɪᴄᴇ"
-__HELP__ = """
-/advice - Gᴇᴛ ʀᴀɴᴅᴏᴍ ᴀᴅᴠɪᴄᴇ
-/astronomical - ᴛᴏ ɢᴇᴛ ᴛᴏᴅᴀʏ's ᴀsᴛʀᴏɴᴏᴍɪᴄᴀʟ  ғᴀᴄᴛ"""
