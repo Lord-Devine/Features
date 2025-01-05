@@ -1,7 +1,6 @@
 from pyrogram import filters
 from pyrogram.errors import PeerIdInvalid
 from pyrogram.types import Message, User
-
 from SungJinwoo import app
 
 
@@ -19,31 +18,11 @@ def ReplyCheck(message: Message):
 
 infotext = (
     "[{full_name}](tg://user?id={user_id})\n\n"
-    " ➻ ᴜsᴇʀ ɪᴅ: `{user_id}`\n"
-    " ➻ ғɪʀsᴛ ɴᴀᴍᴇ: `{first_name}`\n"
-    " ➻ ʟᴀsᴛ ɴᴀᴍᴇ: `{last_name}`\n"
-    " ➻ ᴜsᴇʀɴᴀᴍᴇ: `@{username}`\n"
-    " ➻ ʟᴀsᴛ sᴇᴇɴ: `{last_online}`"
+    " • ᴜsᴇʀ ɪᴅ: `{user_id}`\n"
+    " • ғɪʀsᴛ ɴᴀᴍᴇ: `{first_name}`\n"
+    " • ʟᴀsᴛ ɴᴀᴍᴇ: `{last_name}`\n"
+    " • ᴜsᴇʀɴᴀᴍᴇ: `@{username}`\n"
 )
-
-
-def LastOnline(user: User):
-    if user.is_bot:
-        return ""
-    elif user.status == "recently":
-        return "ʀᴇᴄᴇɴᴛʟʏ"
-    elif user.status == "within_week":
-        return "ᴡɪᴛʜɪɴ ᴛʜᴇ ʟᴀsᴛ ᴡᴇᴇᴋ"
-    elif user.status == "within_month":
-        return "ᴡɪᴛʜɪɴ ᴛʜᴇ ʟᴀsᴛ ᴍᴏɴᴛʜ"
-    elif user.status == "long_time_ago":
-        return "ᴀ ʟᴏɴɢ ᴛɪᴍᴇ ᴀɢᴏ :("
-    elif user.status == "online":
-        return "ᴄᴜʀʀᴇɴᴛʟʏ ᴏɴʟɪɴᴇ"
-    elif user.status == "offline":
-        return datetime.fromtimestamp(user.status.date).strftime(
-            "%a, %d %b %Y, %H:%M:%S"
-        )
 
 
 def FullName(user: User):
@@ -83,22 +62,3 @@ async def whois(client, message):
         ),
         disable_web_page_preview=True,
     )
-
-
-__HELP__ = """
-**ᴄᴏᴍᴍᴀɴᴅ:**
-
-• /whois - **ᴄʜᴇᴄᴋ ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.**
-
-**ɪɴғᴏ:**
-
-- ᴛʜɪs ʙᴏᴛ ᴘʀᴏᴠɪᴅᴇs ᴀ ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴄʜᴇᴄᴋ ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
-- ᴜsᴇ /whois ᴄᴏᴍᴍᴀɴᴅ ғᴏʟʟᴏᴡᴇᴅ ʙʏ ᴀ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴏʀ ᴀ ᴜsᴇʀ ɪᴅ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴜsᴇʀ.
-
-**ɴᴏᴛᴇ:**
-
-- ᴛʜᴇ /whois ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴛᴏ ʀᴇᴛʀɪᴇᴠᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴜsᴇʀ ɪɴ ᴛʜᴇ ᴄʜᴀᴛ.
-- ᴛʜᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ɪɴᴄʟᴜᴅᴇs ᴜsᴇʀ ɪᴅ, ғɪʀsᴛ ɴᴀᴍᴇ, ʟᴀsᴛ ɴᴀᴍᴇ, ᴜsᴇʀɴᴀᴍᴇ, ᴀɴᴅ ʟᴀsᴛ sᴇᴇɴ sᴛᴀᴛᴜs.
-"""
-
-__MODULE__ = "Wʜᴏɪs"
