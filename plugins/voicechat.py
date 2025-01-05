@@ -123,6 +123,7 @@ async def vc_members(client, message):
             )
     except ValueError as e:
         await msg.edit(_["V_C_5"])
+        
 from pyrogram import *
 from pyrogram import filters
 from pyrogram.types import *
@@ -153,18 +154,6 @@ async def brah3(app: app, message: Message):
         print(f"Error: {e}")
 
 
-####
-
-
-@app.on_message(filters.command("math", prefixes="/"))
-def calculate_math(client, message):
-    expression = message.text.split("/math ", 1)[1]
-    try:
-        result = eval(expression)
-        response = f"ᴛʜᴇ ʀᴇsᴜʟᴛ ɪs : {result}"
-    except:
-        response = "ɪɴᴠᴀʟɪᴅ ᴇxᴘʀᴇssɪᴏɴ"
-    message.reply(response)
 
 
 @app.on_message(filters.command(["spg"], ["/", "!", "."]))
@@ -202,35 +191,3 @@ async def search(event):
 
 
 
-
-__MODULE__ = "Mᴀᴛʜ"
-__HELP__ = """
-
-## Mᴀᴛʜ Cᴏᴍᴍᴀɴᴅ Hᴇᴘ
-
-### 1. /ᴍᴀᴛʜ [ᴇxᴘʀᴇssɪᴏɴ]
-**Dᴇsᴄʀɪᴘᴛɪᴏɴ:**
-Cᴀᴄᴜᴀᴛᴇs ᴛʜᴇ ʀᴇsᴜᴛ ᴏғ ᴀ ᴍᴀᴛʜᴇᴍᴀᴛɪᴄᴀ ᴇxᴘʀᴇssɪᴏɴ.
-
-**Usᴀɢᴇ:**
-/ᴍᴀᴛʜ [ᴇxᴘʀᴇssɪᴏɴ]
-
-**Dᴇᴛᴀɪs:**
-- Sᴜᴘᴘᴏʀᴛs ʙᴀsɪᴄ ᴀʀɪᴛʜᴍᴇᴛɪᴄ ᴏᴘᴇʀᴀᴛɪᴏɴs: ᴀᴅᴅɪᴛɪᴏɴ (+), sᴜʙᴛʀᴀᴄᴛɪᴏɴ (-), ᴍᴜᴛɪᴘɪᴄᴀᴛɪᴏɴ (*), ᴀɴᴅ ᴅɪᴠɪsɪᴏɴ (/).
-- Rᴇᴛᴜʀɴs ᴛʜᴇ ʀᴇsᴜᴛ ᴏғ ᴛʜᴇ ᴇxᴘʀᴇssɪᴏɴ.
-- Dɪsᴘᴀʏs "Iɴᴠᴀɪᴅ ᴇxᴘʀᴇssɪᴏɴ" ɪғ ᴛʜᴇ ᴇxᴘʀᴇssɪᴏɴ ɪs ɴᴏᴛ ᴠᴀɪᴅ.
-
-## Gᴏᴏɢᴇ Sᴇᴀʀᴄʜ Cᴏᴍᴍᴀɴᴅ Hᴇᴘ
-
-### 1. /sᴘɢ [ǫᴜᴇʀʏ]
-**Dᴇsᴄʀɪᴘᴛɪᴏɴ:**
-Sᴇᴀʀᴄʜᴇs Gᴏᴏɢᴇ ᴀɴᴅ ᴅɪsᴘᴀʏs sᴇᴀʀᴄʜ ʀᴇsᴜᴛs.
-
-**Usᴀɢᴇ:**
-/sᴘɢ [ǫᴜᴇʀʏ]
-
-**Dᴇᴛᴀɪs:**
-- Sᴇᴀʀᴄʜᴇs Gᴏᴏɢᴇ ғᴏʀ ᴛʜᴇ sᴘᴇᴄɪғɪᴇᴅ ǫᴜᴇʀʏ.
-- Dɪsᴘᴀʏs sᴇᴀʀᴄʜ ʀᴇsᴜᴛs ᴡɪᴛʜ ᴛɪᴛᴇs ᴀɴᴅ ɪɴᴋs.
-- Sᴜᴘᴘᴏʀᴛs ᴘᴀɢɪɴᴀᴛɪᴏɴ ᴡɪᴛʜ ɴᴇxᴛ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴠɪᴇᴡ ᴍᴏʀᴇ ʀᴇsᴜᴛs.
-"""
